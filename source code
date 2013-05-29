@@ -1,0 +1,85 @@
+//shahin rahbari(91521158)
+//simple slot machine
+//Dev-C++4.9.9.2
+
+#include <iostream.h>
+#include <stdlib.h>
+#include <time.h>
+#include <conio.h>
+
+using namespace std;
+
+int main()
+{
+  
+	int x,y,a, b, c, token=5;
+	srand(time(0));
+	
+	cout<<"\t********************************************************\n"
+	    <<"\t*              Welcome to slot machine.                *\n"
+	    <<"\t*           let's see how lucky you are ! :)           *\n"
+		<<"\t*  Would you like to play? (1 to play, 2 not to play)  *\n"
+		<<"\t********************************************************\n\n";
+	cin>>y;
+	if(y==2)
+{
+    cout<<"ok,goodbye"<<endl;
+}
+            
+    if(y==1)
+{	
+	while(token!=0)
+	{cout<<"You have "<<token<< " tokens\n\n"
+	    <<"Pull? (1 to pull, 2 not to pull)\n\n";
+	cin>>x;
+	
+	
+	
+	
+	if(x==1)
+{	
+	
+	 a = 1+rand() %10;
+	 b = 1+rand() %10;
+	 c = 1+rand() %10;
+	
+	
+	cout<<"\t\t"<<a<<"          "<<b<<"          "<<c<<"\n\n";
+	
+}
+		else
+		cout<<"OK,you lost a token";
+		{		
+				
+		if(a==b==c)
+		{
+			
+			token+=4;
+			cout<<"You win!\n\n";
+		}		
+		if(a==b || b==c || a==c)
+		{
+			token+=1;
+		
+		cout<<"You got two out of three\n\n";
+		
+		
+		}
+    
+         
+		else
+		{
+			token-=1;
+			
+		
+		cout<<"You loose\n\n";
+		}
+		
+		}
+	}
+}
+		
+		
+			getch();	
+			return 0;
+}
